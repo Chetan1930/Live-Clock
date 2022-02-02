@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="clock.css"> -->
+    <style>
+        *{   
+
+}
+.box{
+    /* border: 4px solid rgb(0, 234, 255); */
+    position: relative;
+    background-color: rgb(216, 228, 236);
+    border-radius: 2%;
+    height: 100%;
+    width: 90%;
+}
+
+#container{  
+    background: url(/clcok1.jfif) no-repeat;
+    /* border: 3px solid red; */
+    /* border: 3px solid red; */
+    border-radius: 30%;
+    /* padding: 2%; */
+    position: relative;
+    margin: auto;
+    height: 40vw;
+    width: 40vw; 
+    background-size: 100%;
+}
+
+#hour, #minute, #second{
+    position: absolute;
+    background: black;
+    border-radius: 10px; 
+    transform-origin: bottom;
+    /* color: red; */
+}
+#hour{
+    /* display: none; */
+    width: 1.8%;
+    background: greenyellow;
+    background: black;
+    height: 25%;
+    top: 25%;
+    left: 48%;
+    opacity: 0.8;  
+}
+#minute{
+    /* display: none; */
+    width: 1.6%;
+    height: 30%;
+    top: 19.7%;
+    left: 48.100%;
+    opacity: 0.8;  
+}
+#second{
+    /* display: none; */
+    width: 1%;
+    height: 40%;
+    background: red;
+    top: 10%;
+    left: 48.50%;
+    opacity: 0.8; 
+    
+}
+    </style>
+    <title>Live Clock</title>
+</head>
+
+<body>
+    <div class="box">
+        <div id="container">
+            <div id="hour"></div>
+            <div id="minute"></div>
+            <div id="second"></div>
+        </div>
+    </div> 
+
+
+</body>
+<script src="clock.js"></script>
+<script>
+    setInterval(() => {
+    x = new Date();
+    htime = x.getHours();
+    mtime = x.getMinutes();
+    stime = x.getSeconds();
+    
+    hr= 30*htime + mtime/2;
+    mr= 6*mtime;
+    sr= 6*stime;
+
+    hour.style.transform = `rotate(${hr}deg)`;
+    minute.style.transform = `rotate(${mr}deg)`;
+    second.style.transform = `rotate(${sr}deg)`;
+    
+}, 1000);
+</script>
+
+
+</html>
